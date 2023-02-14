@@ -37,25 +37,25 @@ O sistema é opensource, o que significa que sua utilização é gratuita e seu 
 ### 📆 Cronograma
 
 > __⭐Primeira fase__
-       > - Levantamento de requisitos.
-       > - Desenvolvimento de protótipo.
-       > - Aceitação do protótipo pelos stackholders.
+  > - Levantamento de requisitos.
+  > - Desenvolvimento de protótipo.
+  > - Aceitação do protótipo pelos stackholders.
 
 > __⭐Segunda fase__
-       > - Estudos preliminares das ferramentas e recursos.
-       > - Testes de comunicação com a balança.
-       > - Desenvolvimento de módulo de comunicação.
+  > - Estudos preliminares das ferramentas e recursos.
+  > - Testes de comunicação com a balança.
+  > - Desenvolvimento de módulo de comunicação.
 
 > __⭐Terceira fase__
-       > - Desenvolvimento da interface (front-end)
-       > - Desenvolvimento da lógica do negócio (back-end)
+  > - Desenvolvimento da interface (front-end)
+  > - Desenvolvimento da lógica do negócio (back-end)
 
 > __⭐Quarta fase__
-       > - Teste da aplicação em ambiente de desenvolvimento
-       > - Aprovação dos testes
-       > - Instação e Testes da aplicação em ambiente de produção
+  > - Teste da aplicação em ambiente de desenvolvimento
+  > - Aprovação dos testes
+  > - Instação e Testes da aplicação em ambiente de produção
 
-# 💻 Registro do projeto
+# 💻 Registros do projeto
 <img src="./assets/images/IMG1.jpeg" width="300px">\
 O software foi utilizando em um restaurante self-service, durante a festividade da padroeira da cidade de Óbidos-PA.
 O espaço era amplo e contava com gondolas para as comidas e dois caixas que utilizavam duas cópias do sistema com banco de dados independentes (requisitos do cliente.)
@@ -71,14 +71,14 @@ Os dados de pagamentos será registrados e exibidos no relatório diário.
 
 Apesar de uma automação ter sido implementada, o projeto pode escalar suas pontencialidades com o desenvolvimento de processos com menor interferencia humana, como por exemplo o pagamento automático via cartão de crédito ou sistema pix com geração de Qrcode na tela do sistema. Esta melhoria poderá gerar um produto inovador e com potencial emprendedor.
 
-# Equipe do projeto
+# 🦾Equipe do projeto
 <table>
   <tr>
     <td align="center">
       <a href="#">
         <img src="./assets/colaboradores/joao.jpg" width="100px;" alt="joao"><br>
         <sub>
-          <b>João Lúcio De Souza Jr.</b>
+          <b>João Lúcio   (Orientador)</b>
         </sub>
       </a>
     </td>
@@ -86,11 +86,19 @@ Apesar de uma automação ter sido implementada, o projeto pode escalar suas pon
       <a href="#">
         <img src="https://scontent.fbel3-1.fna.fbcdn.net/v/t39.30808-6/314933293_1424113108080542_8546133591944403104_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGEjpFzOTcDqD6s4_V_qQ43ZgPEbQh2v_5mA8RtCHa__inQ4UQKNGmuS99_Mwad3wffgZaE-kIhUbr-Yhvlx7jU&_nc_ohc=zG-rIt7_9e0AX-4zLfD&_nc_ht=scontent.fbel3-1.fna&oh=00_AfA_iN4EfD9ErwfIGsjkNYybb0dficA0hfrrFV7yr6O_eg&oe=63F01E14" width="80px" height='120'><br>
         <sub>
-          <b>Alan de Castro Lopes</b>
+          <b>Alan Lopes   (Bolsista)</b>
         </sub>
       </a>
     </td>
-    
+
+  <td align="center">
+    <a href="#">
+      <img src="https://scontent.fbel3-1.fna.fbcdn.net/v/t39.30808-6/310265759_623436939243110_9184404113922879249_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEV1afpAPLgvvNZ4_HI0d5GpgwJVujdXHqmDAlW6N1ceomTJSZotYGY5nYN-DqmFFjjMdnX0Xgxjq-H7fJi-LtX&_nc_ohc=pDYRuhnY9HgAX_ZFhz5&_nc_ht=scontent.fbel3-1.fna&oh=00_AfCQ7QqZTViscBH6pEcPxVuvDkY5UA_NViAI7G6gYJMSmw&oe=63F04654" width="200px" height='120'><br>
+      <sub>
+        <b>Karol Souza      (Vonluntária)</b>
+      </sub>
+    </a>
+  </td>
 
   </tr>
 </table>
