@@ -11,7 +11,7 @@
 Um sistema desktop desenvolvido em Python para realizar a pesagem automática de pratos em um pequeno restaurante self-service criado temporariamente, durante a festividade da padroeira, em Óbidos-PA. A ferramenta possui recursos como a conexão serial e bluetooth para a comunicação entre a balança e o software; utilização de banco de dados local com backup e relatórios de vendas diários
 O sistema é opensource, o que significa que sua utilização é gratuita e seu código ficará disponível no github.
 
-![title](./assets/images/Capturar.png)
+![](./assets/images/Capturar.PNG)
 
 > __NOTA__: O cliente (Festividade de Santana), forneceu requisitos para o desenvolvimento do software, cedeu o espaço e equipamentos nescessários para o teste do projeto. Não havendo nenhum tipo de contrato ou repasse financeiro para a equipe. 
 
