@@ -1,0 +1,98 @@
+<RelatorioScreenView>
+    name: 'relatorio'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #TOPO
+        MDTopAppBar:
+            title: 'Relatório'
+            left_action_items: [["arrow-left", lambda x: app.setScreen('menu', 'right')]]
+            right_action_items: [["refresh", lambda x: root.carregar_dados(app.dataAtual)]]
+            md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #Content
+        MDBoxLayout:
+            padding: ('20dp', '20dp', '20dp', '20dp')
+            orientation: 'vertical'
+            radius: [20,20,0,0]
+            md_bg_color: [.95,.95,.95,1]
+            spacing: 10
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                #padding: ('40dp', '40dp', '40dp', '10dp')
+                spacing: '10dp'
+                #size_hint: .8, 1
+                pos_hint: {'center_x': 0.5}
+                #md_bg_color: [0.5,1,0,1]
+                MDLabel:
+                    id: lblData
+                    markup: True
+                    text: "Relatório de vendas do dia - 2022/06/28"
+                    font_style: 'H5'
+                    halign: 'center'
+                    adaptive_height: True
+                    padding_y: 20
+
+                MDSeparator:
+
+                ScrollView:
+                    #padding: [0,0,20,0]
+                    MDList:
+                        id: lstIten
+                        OneLineListItem:
+                            text: "Pagamentos em Dinheiro"
+                            font_style: 'H6'
+                            MDLabel:
+                                id: lblDinheiro
+                                text: "R$ 450,00"
+                                font_style: 'H6'
+                                pos_hint: {'center_x': 1.4, 'top': 1}
+                        OneLineListItem:
+                            text: "Pagamentos em Débito"
+                            font_style: 'H6'
+                            MDLabel:
+                                id: lblDebito
+                                text: "R$ 450,00"
+                                font_style: 'H6'
+                                pos_hint: {'center_x': 1.4, 'top': 1}
+                        OneLineListItem:
+                            text: "Pagamentos em Crédito"
+                            font_style: 'H6'
+                            MDLabel:
+                                id: lblCredito
+                                text: "R$ 450,00"
+                                font_style: 'H6'
+                                pos_hint: {'center_x': 1.4, 'top': 1}
+                        OneLineListItem:
+                            text: "Pagamentos em PIX"
+                            font_style: 'H6'
+                            MDLabel:
+                                id: lblPix
+                                text: "R$ 450,00"
+                                font_style: 'H6'
+                                pos_hint: {'center_x': 1.4, 'top': 1}
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    adaptive_height: True
+                    padding: 40
+                    MDLabel:
+                        text: 'TOTAL'
+                        font_style: 'H5'
+
+                    MDLabel:
+                        id: lblTotal
+                        text: 'R$ 2.581,45'
+                        font_style: 'H5'
+                        halign: 'right'
+
+                MDLabel:
+                    id: lblAtualizado
+                    text: ''
+                    adaptive_height: True
+                    font_style: 'H6'
+                    halign: 'center'

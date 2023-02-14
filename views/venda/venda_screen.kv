@@ -1,0 +1,181 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:include ItemVenda components.ItemVenda
+
+
+<VendaScreenView>
+    name: 'venda'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: ('0dp', '0dp', '0dp', '0dp')
+        radius: [0, 30, 0, 30]
+
+        AnchorLayout:
+            anchor_y: 'top'
+            size_hint_y: 0.2
+            canvas:
+                Color:
+                    rgba: .05, .02, .21, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            #Topo
+            MDTopAppBar:
+                left_action_items: [["arrow-left", lambda x: app.setScreen('menu', 'right')]]
+
+            Image:
+                source: 'assets/images/logo1.png'
+                allow_streach: True
+                keep_ratio: False
+                pos_hint: {'center_x': 1}
+
+        #Body
+        MDBoxLayout:
+            #padding: ('10dp', '10dp', '10dp', '10dp')
+            orientation: 'horizontal'
+            padding: ('0dp', '10dp', '10dp', '10dp')
+
+            #Left
+            MDBoxLayout:
+                id: layout_left
+                orientation: 'vertical'
+                md_bg_color: [1,1,1,1]
+                padding: ('10dp', '10dp', '10dp', '10dp')
+                spacing: '20dp'
+                MDIconButton:
+                    icon: 'scale'
+                    user_font_size: 128
+                    size_hint: 0.5, .5
+                    pos_hint: {"center_x": .5, "center_y": 0.5}
+                    theme_icon_color: "Custom"
+                    icon_color: app.theme_cls.primary_color
+                    on_release: root.LerPeso()
+
+                MDLabel:
+                    id: lblPeso
+                    text: 'Coloque o prato na balança...'
+                    font_style: 'H5'
+                    halign: 'center'
+                    size_hint: 1, .2
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, .2
+                    spacing: '10dp'
+                    MDCard:
+                        padding: 16
+                        md_bg_color: .85, .85, .85, 1
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+
+                            MDLabel:
+                                text: 'Valor Kg'
+                                adaptive_size: True
+                                color: .2, .2, .2, .8
+                                pos: 1, 24
+
+                            MDLabel:
+                                id: lblValorKg
+                                text: '40.00'
+                                halign: 'right'
+                                font_style: 'H6'
+                                adaptive_size: True
+                                color: .2, .2, .2, .8
+                                size_hint_x: 1
+
+                    MDCard:
+                        padding: 16
+                        md_bg_color: .85, .85, .85, 1
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+
+                            MDLabel:
+                                text: 'Total do item'
+                                adaptive_size: True
+                                color: .2, .2, .2, .8
+                                pos: 1, 24
+
+                            MDLabel:
+                                id: lblValorItem
+                                text: 'R$ 16,70'
+                                halign: 'right'
+                                font_style: 'H4'
+                                adaptive_size: True
+                                color: .2, .2, .2, .8
+                                size_hint_x: 1
+
+                MDRaisedButton:
+                    id: btIncluir
+                    text: 'INCLUIR'
+                    font_style: 'H4'
+                    size_hint: 1, None
+                    md_bg_color: get_color_from_hex(app.getColor('Green','600'))
+                    on_release: root.Adicionar()
+                    disabled: True
+
+            #Direita
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing:'5dp'
+                padding: ('10dp', '10dp', '10dp', '10dp')
+                md_bg_color: .85, .85, .85, 1
+                radius: [10,10,10,10]
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, .3
+                    spacing: '10dp'
+                    adaptive_size: True
+
+                    Image:
+                        source: 'assets/images/icone.png'
+                        size_hint: None, None
+                        size: '48dp','48dp'
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    MDLabel:
+                        text: 'Itens da Venda'
+                        font_style: 'H5'
+                        adaptive_size: True
+                        size_hint_y: 1
+
+                ScrollView:
+                    MDList:
+                        id: lstItens
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    md_bg_color: .85, .85, .4, 1
+                    #adaptive_size: True
+                    padding: ('10dp', '10dp', '20dp', '10dp')
+                    radius: [10,10,10,10]
+                    size_hint: 1, .3
+
+                    MDLabel:
+                        text: 'Total'
+                        #adaptive_size: True
+                        #md_bg_color: 0,1,1,1
+                    MDLabel:
+                        id: lblValorTotal
+                        text: "R$ 70,00"
+                        font_style: 'H4'
+                        halign: 'right'
+                        #adaptive_size: True
+                        size_hint_x: 1
+
+
+                MDRaisedButton:
+                    id: btPagamento
+                    text: 'PAGAMENTO'
+                    font_style: 'H4'
+                    size_hint: 1, None
+                    disabled: True
+                    on_release: app.setScreen('pagamento')
+
+
+        # Rodapé
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, 0.1

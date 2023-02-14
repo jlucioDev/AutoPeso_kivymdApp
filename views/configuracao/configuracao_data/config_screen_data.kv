@@ -1,0 +1,82 @@
+
+# #:import RightSwitch views/configuracao/configuracao_data/config_screen_data
+
+<ConfigScreenDataView>
+    name: 'configData'
+    #Topo
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #TOPO
+        MDTopAppBar:
+            title: 'Data e Hora'
+            left_action_items: [["arrow-left", lambda x: app.setScreen('config', 'right')]]
+            right_action_items: [["magnify", lambda x: app.callback(x)]]
+            md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #Content
+        MDBoxLayout:
+            padding: ('20dp', '20dp', '20dp', '20dp')
+            orientation: 'vertical'
+            radius: [20,20,0,0]
+            md_bg_color: [.95,.95,.95,1]
+            spacing: 10
+
+            MDLabel:
+                text: "  DATA"
+                adaptive_height: True
+
+            MDCard:
+                orientation: 'vertical'
+                adaptive_height: True
+                #size_hint_y: None
+                #height: "60dp"
+                radius: 10
+                md_bg_color: [.88,.87,.92,1]
+
+                ListItemWithSwitch:
+                    id: btDataHoraAuto
+                    size_hint: 1, None
+                    height: 60
+                    text: 'Data e Hora automáticas'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: 'Usa a data e hora fornecidas pela sua rede'
+                    secondary_text_color: [.53,.53,.53,1]
+                    
+
+                TwoLineListItem:
+                    id: btFuso
+                    size_hint: 1, None
+                    height: 60
+                    text: 'Selecionar fuso horário'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: 'GMT-03:00 Horário Padrão de Brasília'
+                    secondary_text_color: app.theme_cls.primary_dark
+
+                TwoLineListItem:
+                    id: btData
+                    size_hint: 1, None
+                    height: 60
+                    text: 'Definir data'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: ''
+                    secondary_text_color: app.theme_cls.primary_dark
+                    on_release: root.show_date_picker()
+                Widget:
+            Widget:
+
+<ListItemWithSwitch>:
+
+    RightSwitch:
+        pos_hint: {'right': 0.95,'center_y': 0.5}
+        widget_style: "android"
+        active: root.ativado
+        on_active: root.on_ativado(self, self.active)

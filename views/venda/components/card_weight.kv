@@ -1,0 +1,28 @@
+<CardWeight>
+
+    radius: 12
+    padding: "10dp"
+    orientation: "vertical"
+    size_hint_y: None
+    height: self.height
+    ripple_behavior: True
+    #md_bg_color: [.55,.55,.55,1]
+
+
+    MDIcon:
+        icon: root.icon
+        font_size: '50'
+        pos_hint:{"center_x": .5}
+        size_hint_y: None
+        height:10
+        theme_text_color: "Custom"
+        text_color: get_color_from_hex("#4CAF50")
+
+    MDLabel:
+        text: root.text
+        halign: "center"
+        adaptive_height: False
+        font_name: "assets/fonts/Roboto/Roboto-Bold.ttf"
+        line_height: .9
+        font_size: "14sp"
+        pos_hint: {"center_y": .5}

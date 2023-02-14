@@ -1,0 +1,80 @@
+#:include CircularCard components.CircularCard
+
+<MenuScreenView>
+    name: 'menu'
+    on_enter: self.CarregarDados()
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: app.theme_cls.primary_color
+
+        MDTopAppBar:
+            left_action_items: [["menu", lambda x: x]]
+
+        Image:
+            id: img
+            source: 'assets/images/logo1.png'
+            size_hint: 0.6, 0.5
+            pos_hint: {'center_x': 0.5}
+
+        MDRelativeLayout:
+            md_bg_color: [.87, .86, .88, 1]
+            size_hint: None, .8
+            width: root.width
+            radius: (30,30,0,0)
+            #padding: ('30dp', '30dp', '30dp', '30dp')
+            CircularCard:
+                id: cardVendasQtde
+                pos_hint: {'x': 0.010, 'y': .25}
+                c_text: 'Vendas'
+                c_subtext: '254'
+
+            CircularCard:
+                id: cardVendasKg
+                pos_hint: {'right': 0.99, 'y': .25}
+                c_text: 'Kg'
+                c_subtext: '0,00'
+
+            CircularCard:
+                id: cardVendasTotal
+                pos_hint: {'center_x': 0.5, 'center_y': .65}
+                c_text: 'R$'
+                c_subtext: '0.00'
+
+        MDBoxLayout:
+            md_bg_color: [.87, .86, .88, 1]
+            orientation: 'horizontal'
+            padding: ('10dp', '10dp', '10dp', '10dp')
+            spacing: '10dp'
+            size_hint_y: None
+            height: '100dp'
+            #pos_hint:{'center_x': .5, 'center_y': .5}
+            #adaptative_height: True
+
+            MDFlatButton:
+                md_bg_color: get_color_from_hex(app.getColor('Blue','700'))
+                text: "Venda"
+                font_style: 'H5'
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                size_hint: .5, 1
+                on_release: root.AbrirVenda()
+
+
+            MDFlatButton:
+                md_bg_color: get_color_from_hex(app.getColor('Blue','700'))
+                text: "Pagamentos"
+                font_style: 'H5'
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                size_hint: .5, 1
+                on_release: app.setScreen('pagamento')
+                disabled: True
+
+            MDFlatButton:
+                md_bg_color: get_color_from_hex(app.getColor('Blue','700'))
+                text: "Relatórios"
+                font_style: 'H5'
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                size_hint: .5, 1
+                on_release: root.AbrirRelatorios()

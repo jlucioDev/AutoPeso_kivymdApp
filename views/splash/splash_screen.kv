@@ -1,0 +1,89 @@
+#:import images_path kivymd.images_path
+
+<SplashScreenView>
+
+    name: 'splash'
+    on_enter: self.IniciarSistema()
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: app.theme_cls.primary_color
+        spacing: '10dp'
+        #padding: ('10dp', '10dp', '10dp', '10dp')
+
+        AnchorLayout:
+            size_hint_y: 2
+            anchor_x: 'center'
+            anchor_y: 'center'
+
+            Image:
+                source:"assets/images/logo1.png"
+                allow_stretch: False
+                size_hint: .8, .8
+
+        MDBoxLayout:
+            spacing: 0
+            size_hint:  0.5, 1
+            pos_hint: {'center_x': 0.5}
+            orientation: 'vertical'
+            padding: ('0dp', '0dp', '0dp', '50dp')
+
+            MDProgressBar:
+                id: progress
+                #value: 80
+                color: app.getColor('Teal','700')
+                size_hint: 1, 0.1
+                type: "determinate"
+                running_duration: 0.5
+                catching_duration: 0.5
+                #adaptive_size: True
+
+            MDLabel:
+                id: lblInfo
+                markup: True
+                text: "...."
+                theme_text_color: "Custom"
+                text_color: app.getColor('Teal','900')
+                size_hint: 1, 1
+
+        MDRaisedButton:
+            id: btEntrar
+            markup: True
+            text: "[b]ENTRAR[/b]"
+            font_style: "H5"
+            md_bg_color: get_color_from_hex(app.getColor('Blue','700'))
+            pos_hint: {'center_x': 0.5}
+            size_hint:  0.5, 0.5
+            on_release: app.setScreen('menu')
+            disabled: True
+
+        MDRaisedButton:
+            id: btConfigurar
+            text: "CONFIGURAR"
+            font_style: "H6"
+            md_bg_color: get_color_from_hex(app.getColor('Blue','800'))
+            pos_hint: {'center_x': 0.5}
+            size_hint:  0.4, 0.5
+            on_release:
+                app.setScreen('config')
+                root.ids.lblInfo.text = ''
+            disabled: True
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            MDLabel:
+                text: "Auto Peso - Sistema para controle de self-service"
+                font_style: "Subtitle2"
+                adaptive_size: True
+                pos_hint: {'center_x': 0.5}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+
+
+            MDLabel:
+                text: "Versão Beta 1.0"
+                font_style: "Subtitle2"
+                adaptive_size: True
+                pos_hint: {'center_x': 0.5}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1

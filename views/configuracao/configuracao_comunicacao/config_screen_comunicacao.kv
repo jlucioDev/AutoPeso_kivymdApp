@@ -1,0 +1,105 @@
+<ConfigScreenComunicacaoView>
+    name: 'configSerial'
+    #Topo
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #TOPO
+        MDTopAppBar:
+            title: 'Configuração'
+            left_action_items: [["arrow-left", lambda x: app.setScreen('config', 'right')]]
+            right_action_items: [["magnify", lambda x: app.callback(x)]]
+            md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #Content
+        MDBoxLayout:
+            padding: ('20dp', '20dp', '20dp', '20dp')
+            orientation: 'vertical'
+            radius: [20,20,0,0]
+            md_bg_color: [1,1,1,1]
+            spacing: 10
+
+            MDLabel:
+                text: "  COMUNICAÇÃO"
+                adaptive_height: True
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: "420dp"
+                radius: 10
+                padding: [0, 20, 10, 0]
+                md_bg_color: [.95,.95,.95,1]
+
+                ListItemWithSwitch:
+                    id: btSimulado
+                    text: 'Simular comunicação'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    on_ativado: root.alterar_simulado(self.ativado)
+                    ativado: app.simulado
+
+                TwoLineListItem:
+                    id: lblPorta
+                    text: 'Definir Porta'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    pos_hint: {'center_y': 0.5}
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: app.porta
+                    secondary_text_color: app.theme_cls.primary_dark
+                    on_release: root.show_alert_porta()
+
+                TwoLineListItem:
+                    id: lblBitsPorSegundo
+                    text: 'Bits por segundo'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    pos_hint: {'center_y': 0.5}
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: '9600'
+                    secondary_text_color: app.theme_cls.primary_dark
+
+                TwoLineListItem:
+                    id: lblBitsDeDados
+                    text: 'Bits de dados'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    pos_hint: {'center_y': 0.5}
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: '8'
+                    secondary_text_color: app.theme_cls.primary_dark
+
+                TwoLineListItem:
+                    id: lblParidade
+                    text: 'Paridade'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    pos_hint: {'center_y': 0.5}
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: 'Nenhum'
+                    secondary_text_color: app.theme_cls.primary_dark
+
+                TwoLineListItem:
+                    id: lblBitsDeParada
+                    text: 'Bits de parada'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    pos_hint: {'center_y': 0.5}
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: '1'
+                    secondary_text_color: app.theme_cls.primary_dark
+            Widget:
+
+<Content>
+    orientation: "vertical"
+    spacing: "10dp"
+    size_hint_y: None
+    height: "60dp"
+
+    MDTextField:
+        id: txtComPort
+        required: True
+        text: root.texto

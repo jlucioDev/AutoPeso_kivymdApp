@@ -1,0 +1,59 @@
+<ConfigScreenCaixaView>
+    name: 'configCaixa'
+    #Topo
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #TOPO
+        MDTopAppBar:
+            title: 'Caixa'
+            left_action_items: [["arrow-left", lambda x: app.setScreen('config', 'right')]]
+            right_action_items: [["magnify", lambda x: app.callback(x)]]
+            md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+
+        #Content
+        MDBoxLayout:
+            padding: ('20dp', '20dp', '20dp', '20dp')
+            orientation: 'vertical'
+            radius: [20,20,0,0]
+            md_bg_color: [.95,.95,.95,1]
+            spacing: 10
+
+            MDLabel:
+                text: "  Controle de caixa"
+                adaptive_height: True
+
+            MDCard:
+                orientation: 'vertical'
+                adaptive_height: True
+                size_hint_y: None
+                height: "60dp"
+                radius: 10
+                md_bg_color: [.88,.87,.92,1]
+
+                TwoLineListItem:
+                    id: btValor
+                    size_hint: 1, None
+                    height: 60
+                    text: 'Definir valor do Kg da refeição'
+                    theme_text_color: 'Custom'
+                    text_color: [.26,.26,.26,1]
+                    secondary_theme_text_color: 'Custom'
+                    secondary_text: app.ValorKg
+                    secondary_text_color: app.theme_cls.primary_dark
+                    on_release: root.show_alert_valor()
+                Widget:
+            Widget:
+
+<ContentValor>
+    orientation: "vertical"
+    spacing: "10dp"
+    size_hint_y: None
+    height: "60dp"
+
+    MDTextField:
+        id: txtValor
+        required: True
+        text: root.texto

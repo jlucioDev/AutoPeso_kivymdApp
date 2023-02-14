@@ -1,0 +1,169 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#: import Clock kivy.clock.Clock
+
+<PagamentoExtraScreenView>
+    name: 'pagamento'
+    on_enter: root.CarregaItensVenda()
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: ('0dp', '0dp', '0dp', '0dp')
+        radius: [0, 30, 0, 30]
+
+        #Topo
+        AnchorLayout:
+            anchor_y: 'top'
+            size_hint_y: 0.2
+            canvas:
+                Color:
+                    rgba: .05, .02, .21, 1
+                Rectangle:
+                    size: self.size
+                    pos:self.pos
+            MDTopAppBar:
+                left_action_items: [["arrow-left", lambda x: app.setScreen('venda', 'right')]]
+
+            Image:
+                source: 'assets/images/logo1.png'
+                #size_hint: 1, 1
+                pos_hint: {'center_x': 1}
+
+
+        #Body
+        MDBoxLayout:
+            #padding: ('10dp', '10dp', '10dp', '10dp')
+            orientation: 'horizontal'
+            padding: ('10dp', '10dp', '0dp', '10dp')
+
+            #Left
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing:'5dp'
+                padding: ('10dp', '10dp', '10dp', '10dp')
+                md_bg_color: .85, .85, .85, 1
+                radius: [10,10,10,10]
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, .3
+                    spacing: '10dp'
+                    adaptive_size: True
+
+                    Image:
+                        source: 'assets/images/icone.png'
+                        size_hint: None, None
+                        size: '48dp','48dp'
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    MDLabel:
+                        text: 'Itens da Venda'
+                        font_style: 'H5'
+                        adaptive_size: True
+                        size_hint_y: 1
+
+                ScrollView:
+                    MDList:
+                        id: lstItens
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    md_bg_color: .85, .85, .4, 1
+                    adaptive_size: True
+                    padding: ('10dp', '10dp', '10dp', '10dp')
+                    radius: [10,10,10,10]
+                    size_hint_x: 1
+
+                    MDLabel:
+                        text: 'Total'
+                        adaptive_size: True
+                        #md_bg_color: 0,1,1,1
+                    MDLabel:
+                        id: lblValorTotal
+                        text: "20.00"
+                        font_style: 'H4'
+                        pos_hint: {'right': 1}
+                        adaptive_size: True
+
+            #Direita
+            MDBoxLayout:
+                orientation: 'vertical'
+                md_bg_color: [1,1,1,1]
+                padding: ('10dp', '10dp', '10dp', '10dp')
+                spacing: '20dp'
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    #adaptive_size: True
+                    size_hint: 1, None
+                    height: 50
+                    pos_hint: {'center_x': 0.5}
+
+                    # MDIcon:
+                    #     icon: 'cash'
+                    #     font_size: 48
+                    #     size_hint: None, None
+                    #     height: 50
+                    #     pos_hint: {"top": 1.1}
+                    #     theme_icon_color: "Custom"
+                    #     icon_color: app.theme_cls.primary_color
+
+                    # MDLabel:
+                    #     text: "Pagamento"
+                    #     font_style: 'H4'
+                    #     adaptive_size: True
+                    #     size_hint: 0.5, None
+                    #     pos_hint: {"center_x": .5, "top": 1}
+                    #     color: app.theme_cls.primary_color
+                    #     md_bg_color: [1,0,0,1]
+
+                MDBoxLayout:
+                    id: ContainerTxt
+                    orientation: 'vertical'
+                    spacing: 10
+                    padding: [50,0,50,20]
+
+                    ClickableTextFieldRound:
+                        id: txtDinheiro
+                        hint_text: 'DINHEIRO'
+                        text: "0,00"
+                        pos_hint: {"center_x": 0.5}
+                        font_size: "28dp"
+                        on_texto: root.Formatar_Numero(self.hint_text)
+                        on_clicked: root.on_clicado('DINHEIRO')
+
+                    ClickableTextFieldRound:
+                        id: txtDebito
+                        text: "0,00"
+                        hint_text: 'DÉBITO'
+                        pos_hint: {"rigth": 1}
+                        font_size: "28dp"
+                        on_texto: root.Formatar_Numero(self.hint_text)
+                        on_clicked: root.on_clicado('DÉBITO')
+                    ClickableTextFieldRound:
+                        id: txtCredito
+                        text: "0,00"
+                        hint_text: 'CRÉDITO'
+                        pos_hint: {"rigth": 1}
+                        font_size: "28dp"
+                        on_texto: root.Formatar_Numero(self.hint_text)
+                        on_clicked: root.on_clicado('CRÉDITO')
+                    ClickableTextFieldRound:
+                        id: txtPix
+                        text: "0,00"
+                        hint_text: 'PIX'
+                        pos_hint: {"rigth": 1}
+                        font_size: "28dp"
+                        on_texto: root.Formatar_Numero(self.hint_text)
+                        on_clicked: root.on_clicado('PIX')
+
+                MDRaisedButton:
+                    text: 'FINALIZAR'
+                    font_style: 'H4'
+                    size_hint: 1, 0.2
+                    md_bg_color: get_color_from_hex(app.getColor('Blue','900'))
+                    on_release: root.IncluirPagamento()
+
+        # Rodapé
+        Button:
+            text: "text"
+            size_hint: 1, 0.1
+

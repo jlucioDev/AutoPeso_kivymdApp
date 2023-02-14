@@ -1,0 +1,26 @@
+<CircularCard>
+    id: card
+    orientation: 'vertical'
+    md_bg_color: get_color_from_hex(app.getColor('Blue','700'))
+    radius: 20
+    size_hint: None, None
+    size: '400dp','200dp'
+    pos_hint: {'x': .1, 'y': .2}
+    padding:('0dp','20dp','0dp','40dp')
+
+    MDLabel:
+        text: root.c_text
+        halign: 'center'
+        font_style: 'Subtitle1'
+        theme_text_color: 'Custom'
+        text_color: 1,1,1,1
+
+    MDLabel:
+        text: root.c_subtext
+        adaptive_size: True
+        pos_hint:{'center_x': 0.5}
+        font_style: 'H4'
+        theme_text_color: 'Custom'
+        text_color: 1,1,1,1
+        size_hint_x: 1
+        halign: 'center'
