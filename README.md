@@ -93,7 +93,7 @@ Apesar de uma automação ter sido implementada, o projeto pode escalar suas pon
 
   <td align="center">
     <a href="#">
-      <img src="https://scontent.fbel3-1.fna.fbcdn.net/v/t39.30808-6/310265759_623436939243110_9184404113922879249_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEV1afpAPLgvvNZ4_HI0d5GpgwJVujdXHqmDAlW6N1ceomTJSZotYGY5nYN-DqmFFjjMdnX0Xgxjq-H7fJi-LtX&_nc_ohc=pDYRuhnY9HgAX_ZFhz5&_nc_ht=scontent.fbel3-1.fna&oh=00_AfCQ7QqZTViscBH6pEcPxVuvDkY5UA_NViAI7G6gYJMSmw&oe=63F04654" width="200px" height='120'><br>
+      <img src="https://scontent.fbel3-1.fna.fbcdn.net/v/t39.30808-6/310265759_623436939243110_9184404113922879249_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEV1afpAPLgvvNZ4_HI0d5GpgwJVujdXHqmDAlW6N1ceomTJSZotYGY5nYN-DqmFFjjMdnX0Xgxjq-H7fJi-LtX&_nc_ohc=pDYRuhnY9HgAX_ZFhz5&_nc_ht=scontent.fbel3-1.fna&oh=00_AfCQ7QqZTViscBH6pEcPxVuvDkY5UA_NViAI7G6gYJMSmw&oe=63F04654" width="120px" height='120'><br>
       <sub>
         <b>Karol Souza      (Vonluntária)</b>
       </sub>
